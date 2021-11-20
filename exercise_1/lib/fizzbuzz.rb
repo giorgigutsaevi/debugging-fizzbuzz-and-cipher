@@ -1,14 +1,19 @@
 class FizzBuzz
   def play(number)
-    string = ""
-    string << "Fizz" if is_divisible_by?(3, the_number)
-    string << "Bizz" if is_divisible_by?(5, number)
-    string.empty? ? string : number
+    if is_divisible_by?(15, number)
+      'FizzBuzz'
+    elsif is_divisible_by?(5, number)
+      'Buzz'
+    elsif is_divisible_by?(3, number)
+      'Fizz'
+    else
+      number
+    end
   end
 
   private
 
-  def is_divisible_by?(divis0r, number)
-    number % divisor == 1
+  def is_divisible_by?(divisor, number)
+    number % divisor == 0
   end
 end
